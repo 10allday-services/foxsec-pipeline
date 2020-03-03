@@ -41,6 +41,7 @@ public class OpenSSH extends SourcePayloadBase implements Serializable {
   /** Construct matcher object. */
   public OpenSSH() {
     pattRe = Pattern.compile(matchRe);
+    setPreMatch(new String[] {"ssh"});
   }
 
   /**

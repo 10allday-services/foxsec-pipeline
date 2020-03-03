@@ -119,6 +119,7 @@ public class GcpAudit extends SourcePayloadBase implements Serializable {
   /** Construct matcher object. */
   public GcpAudit() {
     jfmatcher = new JacksonFactory();
+    setPreMatch(new String[] {"AuditLog"});
   }
 
   /**

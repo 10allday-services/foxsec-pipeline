@@ -157,7 +157,17 @@ public class AmoDocker extends SourcePayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public AmoDocker() {}
+  public AmoDocker() {
+    setPreMatch(
+        new String[] {
+          "logged in successfully",
+          "New version",
+          "Got profile",
+          "FileUpload created",
+          "Restricting request",
+          "UPLOAD:"
+        });
+  }
 
   /**
    * Construct parser object.

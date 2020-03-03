@@ -115,7 +115,9 @@ public class BmoAudit extends SourcePayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public BmoAudit() {}
+  public BmoAudit() {
+    setPreMatch(new String[] {"successful login", "created bug"});
+  }
 
   /**
    * Construct parser object.

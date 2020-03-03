@@ -63,7 +63,9 @@ public class Duopull extends SourcePayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public Duopull() {}
+  public Duopull() {
+    setPreMatch(new String[] {"duopull"});
+  }
 
   /**
    * Construct parser object.

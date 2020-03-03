@@ -64,7 +64,9 @@ public class GuardDuty extends PayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public GuardDuty() {}
+  public GuardDuty() {
+    setPreMatch(new String[] {"arn"});
+  }
 
   /**
    * Construct parser object.

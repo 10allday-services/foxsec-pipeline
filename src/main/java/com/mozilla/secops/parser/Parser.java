@@ -468,6 +468,9 @@ public class Parser {
     }
 
     for (PayloadBase p : payloads) {
+      if (!p.prematch(input)) {
+        continue;
+      }
       if (!p.matcher(input, state)) {
         continue;
       }

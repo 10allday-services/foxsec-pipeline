@@ -51,7 +51,9 @@ public class ETDBeta extends PayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public ETDBeta() {}
+  public ETDBeta() {
+    setPreMatch(new String[] {"detectionCategory"});
+  }
 
   /**
    * Construct parser object.

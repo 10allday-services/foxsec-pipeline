@@ -364,7 +364,9 @@ public class FxaAuth extends SourcePayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public FxaAuth() {}
+  public FxaAuth() {
+    setPreMatch(new String[] {"remoteAddressChain"});
+  }
 
   /**
    * Construct parser object.

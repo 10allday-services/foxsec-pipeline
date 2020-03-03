@@ -44,6 +44,7 @@ public class Cloudtrail extends SourcePayloadBase implements Serializable {
   /** Construct matcher object. */
   public Cloudtrail() {
     mapper = getObjectMapper();
+    setPreMatch(new String[] {"eventTime"});
   }
 
   /**

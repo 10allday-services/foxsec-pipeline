@@ -123,6 +123,7 @@ public class Auth0 extends SourcePayloadBase implements Serializable {
   /** Construct matcher object. */
   public Auth0() {
     mapper = getObjectMapper();
+    setPreMatch(new String[] {"identity", "user_name", "user_id", "client_id"});
   }
 
   /**

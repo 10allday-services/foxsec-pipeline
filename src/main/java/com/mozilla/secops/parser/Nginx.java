@@ -99,7 +99,9 @@ public class Nginx extends SourcePayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public Nginx() {}
+  public Nginx() {
+    setPreMatch(new String[] {"remote_addr", "remote_ip"});
+  }
 
   /**
    * Construct parser object.

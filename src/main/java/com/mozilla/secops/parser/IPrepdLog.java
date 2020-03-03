@@ -116,7 +116,9 @@ public class IPrepdLog extends SourcePayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public IPrepdLog() {}
+  public IPrepdLog() {
+    setPreMatch(new String[] {"violation"});
+  }
 
   /**
    * Construct parser object.

@@ -22,6 +22,36 @@ public abstract class PayloadBase implements Serializable {
   /** Construct matcher object. */
   public PayloadBase() {}
 
+  protected String[] preMatch = null;
+
+  protected void setPreMatch(String[] preMatch) {
+    this.preMatch = preMatch;
+  }
+
+  /**
+   * Attempt prematch before attempting full payload match
+   *
+   * <p>This is an optimization that can be used in cases where complete match attempts may be
+   * costly. If a particular payload type does not set any prematch strings, this function will
+   * always return true and a full match will be attempted.
+   *
+   * @param input Input string
+   * @return True if input text matches prematch substrings
+   */
+  public boolean prematch(String input) {
+    if (preMatch == null) {
+      // If no prematch strings have been specified for the payload type, always return
+      // true so we will attempt a full match.
+      return true;
+    }
+    for (int i = 0; i < preMatch.length; i++) {
+      if (input.contains(preMatch[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   /**
    * Construct parser object.
    *

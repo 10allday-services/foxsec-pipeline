@@ -38,7 +38,9 @@ public class GLB extends SourcePayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public GLB() {}
+  public GLB() {
+    setPreMatch(new String[] {"LoadBalancerLogEntry"});
+  }
 
   /**
    * Construct parser object.

@@ -135,6 +135,7 @@ public class Taskcluster extends SourcePayloadBase implements Serializable {
   /** Construct matcher object. */
   public Taskcluster() {
     emailPattern = null;
+    setPreMatch(new String[] {"clientId"});
   }
 
   /**

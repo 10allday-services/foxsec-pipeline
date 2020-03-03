@@ -48,7 +48,9 @@ public class Alert extends PayloadBase implements Serializable {
   }
 
   /** Construct matcher object. */
-  public Alert() {}
+  public Alert() {
+    setPreMatch(new String[] {"severity"});
+  }
 
   /**
    * Construct parser object.
